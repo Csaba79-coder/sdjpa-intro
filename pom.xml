@@ -47,4 +47,9 @@
         </plugins>
     </build>
 
+    <scm>
+        <developerConnection>scm:git:git@github.com:Csaba79-coder/sdjpa-intro</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
 </project>
