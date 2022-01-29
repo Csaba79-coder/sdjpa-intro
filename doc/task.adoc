@@ -1,0 +1,12 @@
+= Good to know:
+
+after removing local from here:
+
+image::image-2022-01-29-21-07-16-638.png[]
+
+we have to make setup in pom.xml & enable in profile (h2 and ossrh if it exists there!):
+
+after enable do not forget to refresh the maven dependency!
+
+image::image-2022-01-29-21-12-29-591.png[]
+
