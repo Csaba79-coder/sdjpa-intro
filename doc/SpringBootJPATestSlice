@@ -1,3 +1,5 @@
+// before component test annotation it works properly, after that the two other book was included in test results!
+
 package guru.springframework.sdjpaintro;
 
 import guru.springframework.sdjpaintro.domain.Book;
@@ -13,8 +15,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DataJpaTest // instead of @SpringBootTest annotation
-// regarding this annotation bellow, the DataInitializer is running, so add two more books in results!
-@ComponentScan(basePackages = {"guru.springframework.sdjpaintro.bootstrap"}) // list of packages!!!
+//@ComponentScan(basePackages = {"guru.springframework.sdjpaintro.bootstrap"}) // list of packages!!!
 public class SpringBootJPATestSplice {
 
     @Autowired
@@ -30,7 +31,7 @@ public class SpringBootJPATestSplice {
         Long countBefore = bookRepository.count();
         // DataInitializer is not functioning, that reason it fails:
         // assertThat(countBefore).isEqualTo(2); this fails!!!
-        assertThat(countBefore).isEqualTo(2);
+        assertThat(countBefore).isEqualTo(0);
 
         bookRepository.save(new Book("My new book", "26", "mySelf"));
 
@@ -45,7 +46,7 @@ public class SpringBootJPATestSplice {
     void testJPATestSpliceTransaction() {
         // to run this one properly we have to make the Order annotation for tests! to run after eachother!
         Long countBefore = bookRepository.count();
-        assertThat(countBefore).isEqualTo(3);
+        assertThat(countBefore).isEqualTo(1);
 
     }
 }
