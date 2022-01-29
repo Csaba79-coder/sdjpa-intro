@@ -4,6 +4,7 @@ import guru.springframework.sdjpaintro.domain.Book;
 import guru.springframework.sdjpaintro.repositories.BookRepository;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.test.annotation.Commit;
@@ -15,6 +16,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @DataJpaTest // instead of @SpringBootTest annotation
 // regarding this annotation bellow, the DataInitializer is running, so add two more books in results!
 @ComponentScan(basePackages = {"guru.springframework.sdjpaintro.bootstrap"}) // list of packages!!!
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class SpringBootJPATestSplice {
 
     @Autowired
