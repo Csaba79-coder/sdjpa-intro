@@ -24,3 +24,4 @@ use the most recent flyway dependency in pom.xml. I kept the Liquid!!! they do n
             <version>8.4.3</version>
         </dependency>
 
+DO NOT FORGET to drop the TABLES, also if the database empty, have an empty database before running the program!
