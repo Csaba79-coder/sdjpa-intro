@@ -15,3 +15,12 @@ From liquibase you need the most recent version!
 https://mvnrepository.com/artifact/org.liquibase/liquibase-maven-plugin
 
 After using liquibase we refactor the schema.sql under scripts as we don't want to run that again ...
+
+use the most recent flyway dependency in pom.xml. I kept the Liquid!!! they do not operate together!
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>8.4.3</version>
+        </dependency>
+
