@@ -15,9 +15,6 @@ import org.springframework.test.annotation.Rollback;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-/**
- * Created by jt on 7/3/21.
- */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DataJpaTest
 @ComponentScan(basePackages = {"guru.springframework.sdjpaintro.bootstrap"})

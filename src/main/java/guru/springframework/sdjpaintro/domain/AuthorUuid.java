@@ -5,9 +5,6 @@ import org.hibernate.annotations.Type;
 import javax.persistence.*;
 import java.util.UUID;
 
-/**
- * Created by jt on 8/15/21.
- */
 @Entity
 public class AuthorUuid {
     @Id
