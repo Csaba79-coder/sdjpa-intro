@@ -5,9 +5,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-/**
- * Created by jt on 8/15/21.
- */
 @Profile("clean")
 @Configuration
 public class DbClean {
