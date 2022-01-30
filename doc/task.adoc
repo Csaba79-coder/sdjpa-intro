@@ -13,3 +13,5 @@ image::image-2022-01-29-21-12-29-591.png[]
 From liquibase you need the most recent version!
 
 https://mvnrepository.com/artifact/org.liquibase/liquibase-maven-plugin
+
+After using liquibase we refactor the schema.sql under scripts as we don't want to run that again ...
