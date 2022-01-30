@@ -10,3 +10,6 @@ after enable do not forget to refresh the maven dependency!
 
 image::image-2022-01-29-21-12-29-591.png[]
 
+From liquibase you need the most recent version!
+
+https://mvnrepository.com/artifact/org.liquibase/liquibase-maven-plugin
