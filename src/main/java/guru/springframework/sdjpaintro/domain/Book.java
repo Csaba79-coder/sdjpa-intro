@@ -1,29 +1,35 @@
 package guru.springframework.sdjpaintro.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
+/**
+ * Created by jt on 6/12/21.
+ */
 @Entity
 public class Book {
 
-    // the package called domain or model or entity
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    // @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;
     private String isbn;
     private String publisher;
+    private Long authorId;
 
     public Book() {
+
     }
 
-    public Book(String title, String isbn, String publisher) {
+    public Book(String title, String isbn, String publisher, Long authorId) {
         this.title = title;
         this.isbn = isbn;
         this.publisher = publisher;
+        this.authorId = authorId;
     }
 
     @Override
@@ -33,7 +39,6 @@ public class Book {
 
         Book book = (Book) o;
 
-        // return id != null ? id.equals(book.id) : book.id == null;
         return Objects.equals(id, book.id);
     }
 
@@ -72,5 +77,13 @@ public class Book {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
+    }
+
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) {
+        this.authorId = authorId;
     }
 }

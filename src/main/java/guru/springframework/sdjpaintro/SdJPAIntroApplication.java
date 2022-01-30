@@ -9,4 +9,5 @@ public class SdJPAIntroApplication {
     public static void main(String[] args) {
         SpringApplication.run(SdJPAIntroApplication.class, args);
     }
+
 }

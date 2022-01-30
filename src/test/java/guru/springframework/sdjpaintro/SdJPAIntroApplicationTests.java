@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class SdJPAIntroApplicationTests {
@@ -16,9 +15,9 @@ class SdJPAIntroApplicationTests {
 
     @Test
     void testBookRepository() {
-        Long count = bookRepository.count();
+        long count = bookRepository.count();
+
         assertThat(count).isGreaterThan(0);
-        assertEquals(count, 2); // as far as I had 2 example books created!
     }
 
     @Test

@@ -34,7 +34,7 @@ public class SpringBootJPATestSplice {
         // assertThat(countBefore).isEqualTo(2); this fails!!!
         assertThat(countBefore).isEqualTo(2);
 
-        bookRepository.save(new Book("My new book", "26", "mySelf"));
+        bookRepository.save(new Book("My new book", "26", "mySelf", null));
 
 
         Long countAfter = bookRepository.count();

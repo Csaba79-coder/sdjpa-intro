@@ -6,6 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+/**
+ * Created by jt on 6/12/21.
+ */
 @Profile({"local", "default"})
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -18,29 +21,18 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        bookRepository.deleteAll();
 
-        Book bookDDD = new Book("Domain Driven Design", "9780321125217", "Addison-Wesley Longman Publishing Co.");
-        System.out.println("ID (before saving): " + bookDDD.getId());
+        Book bookDDD = new Book("Domain Driven Design", "123", "RandomHouse", null);
         Book savedDDD = bookRepository.save(bookDDD);
 
-        System.out.println("ID: " + savedDDD.getId());
-
-        Book bookSIA = new Book("Spring in Action", "9781617294945", "Manning Publications");
+        Book bookSIA = new Book("Spring In Action", "234234", "Oriely", null);
         Book savedSIA = bookRepository.save(bookSIA);
 
-        System.out.println("ID: " + savedSIA.getId());
-
         bookRepository.findAll().forEach(book -> {
+            System.out.println("Book Id: " + book.getId());
+            System.out.println("Book Title: " + book.getTitle());
+        });
 
-            System.out.println("Book ID: " + book.getId());
-            System.out.println("Book title: " + book.getTitle());
-            System.out.println("Book ISBN: " + book.getIsbn());
-            System.out.println("Book publisher: " + book.getPublisher());
-                }
-        );
-    }
-
-    public BookRepository getBookRepository() {
-        return bookRepository;
     }
 }
