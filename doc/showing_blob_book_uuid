@@ -1,0 +1,5 @@
+SELECT hex(id) FROM bookdb.book_uuid;
+
+that was from MySQL: 'C1F8E3BAA53F426CAE897FFA7977B003'
+
+here in this db in IntelliJ: 0xC1F8E3BAA53F426CAE897FFA7977B003

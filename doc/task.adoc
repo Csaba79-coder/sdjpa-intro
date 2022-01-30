@@ -25,3 +25,11 @@ use the most recent flyway dependency in pom.xml. I kept the Liquid!!! they do n
         </dependency>
 
 DO NOT FORGET to drop the TABLES, also if the database empty, have an empty database before running the program!
+
+Book hex(id) UUID RFC 4122:
+
+image::image-2022-01-30-22-18-37-555.png[]
+
+and it was represented as a blob in MySQL:
+
+image::image-2022-01-30-22-20-25-983.png[]
